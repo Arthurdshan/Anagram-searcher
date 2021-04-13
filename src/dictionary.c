@@ -43,6 +43,6 @@ void print_dictionary(Dictionary *dictionary) {
   printf("]\n");
 }
 
-void sort_dictionary(Dictionary *dictionary){
+void sort_dictionary(Dictionary *dictionary) {
   merge_sort(dictionary->anagrams, 0, dictionary->size - 1);
 }

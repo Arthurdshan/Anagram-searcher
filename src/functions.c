@@ -77,7 +77,7 @@ int get_anagrams(Dictionary *dictionary, char *input, char *user_input){
 }
 
 /* Function that controls the flux of the searching */
-int search_for_anagrams(char* input, char* dictionary){
+int search_for_anagrams(char* input, char* dictionary) { 
 
     Dictionary *new_dictionary = create_dictionary();
     char *word;
@@ -88,7 +88,7 @@ int search_for_anagrams(char* input, char* dictionary){
    
 
     // read the whole file and push the words into the dictionary struct
-    while((fscanf(arq, "%s", word)) != EOF){
+    while((fscanf(arq, "%s", word)) != EOF) {
         word = to_lower_case(word);
         insert_words(new_dictionary, word);
     }

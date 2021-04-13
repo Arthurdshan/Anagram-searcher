@@ -6,7 +6,5 @@ all:
 	gcc -g -c binary_search.c
 	gcc -o main main.o merge_sort.o binary_search.o functions.o dictionary.o
 	del *.o
-	./main teste br.txt
-	del *.exe
 
 

@@ -6,11 +6,10 @@
 #include "dictionary.h"
 #include "binary_search.h"
 
-#define SEARCH_SUCESS        0
+#define SEARCH_SUCESS        1
+#define EXPORT_SUCESS        0  
 #define SEARCH_FAILED       -1
-#define SEARCH_INCOMPLETE   -2
-#define ARCHIVE_ERROR       -3  
-#define EXPORT_SUCESS       -4  
+#define ARCHIVE_ERROR       -2  
 
 /**
  * A useful function in case the user inputs a word containing
@@ -43,7 +42,7 @@ int get_anagrams(Dictionary *dictionary, char *input, char *user_input){
     int anagram_position;
     anagram_position = binary_search(dictionary->anagrams, 0, dictionary->size - 1, input);
     
-    /* no anagrams */
+    /* no anagrams found */
     if (anagram_position == -1) {
         printf("There's no anagram for the chosen word.\n");
         return SEARCH_FAILED;
@@ -56,7 +55,12 @@ int get_anagrams(Dictionary *dictionary, char *input, char *user_input){
     printf("user input: %s\n", user_input);
     printf("anagrams:\n");
     
-    /* compares the size and the string to print the anagrams */ 
+    /**
+     * extra code to get the words around the key returned from
+     * the binary search function. 
+     * it compares the size and the string to print the 
+     * extra anagrams 
+     */ 
     while(has_anagrams) {
         if(strcmp(dictionary->anagrams[i].sorted_word, input) == 0  && strlen(dictionary->anagrams[i].sorted_word) == strlen(input))
             printf("%s\n", dictionary->anagrams[i].original_word);

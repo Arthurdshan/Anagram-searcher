@@ -25,4 +25,4 @@ make
 ```
 ./main your_word_of_choice br.txt
 ```
-**OBS:**your word must not have any `^ ´ ` ~`, even though its a portuguese dictionary. Capital letters are okay. 
+**OBS:**your word must not have any `^ ´ ~`, even though its a portuguese dictionary. Capital letters are okay. 

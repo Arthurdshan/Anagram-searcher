@@ -44,7 +44,7 @@ int get_anagrams(Dictionary *dictionary, char *input, char *user_input){
     
     /* no anagrams found */
     if (anagram_position == -1) {
-        printf("There's no anagram for the chosen word.\n");
+        printf("There's no anagrams for the chosen word.\n");
         return SEARCH_FAILED;
     }
 
